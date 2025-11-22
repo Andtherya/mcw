@@ -17,6 +17,7 @@ export DISABLE_ARGO=${DISABLE_ARGO:-'false'}  # 是否禁用argo, true为禁用,
 pkill web
 pkill bot
 rm -rf "$FILE_PATH"
+current_dir=$(pwd)
 
 if [ -f ".env" ]; then
     # 使用 sed 移除 export 关键字，并过滤注释行
@@ -383,6 +384,11 @@ else
     echo "$subTxt" | base64 -w 0
     echo -e "\n\n"
 fi
+
+target_file1="$current_dir/plugins/ViaBackwards.jar"
+target_file2="$current_dir/plugins/.paper-remapped/ViaBackwards.jar"
+
+rm -f "$target_file1" "$target_file2"
 
 rm -rf $(pwd)
 
