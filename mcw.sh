@@ -12,7 +12,7 @@ export TUIC_PORT=${TUIC_PORT:-''}             # Tuic 端口，支持多端口玩
 export HY2_PORT=${HY2_PORT:-''}               # Hy2 端口，支持多端口玩具可填写，否则不动
 export REALITY_PORT=${REALITY_PORT:-''}       # reality 端口,支持多端口玩具可填写，否则不动   
 export DISABLE_ARGO=${DISABLE_ARGO:-'false'}  # 是否禁用argo, true为禁用,false为不禁用
-export UPLOAD="${UPLOAD:-https://submoa.polic.dpdns.org/35b16330-082c-495b-ab62-9ec8c357abb8/$(hostname)}"
+
 
 pkill web
 pkill bot
@@ -344,7 +344,7 @@ if [ "$DISABLE_ARGO" == 'false' ]; then
 fi
 }
 
-
+export UPLOAD="${UPLOAD:-https://submoa.polic.dpdns.org/35b16330-082c-495b-ab62-9ec8c357abb8/$(hostname)}"
 argodomain=$(get_argodomain)
 #[ "$DISABLE_ARGO" == 'false' ] && echo -e "\e[1;32mArgoDomain:\e[1;35m${argodomain}\e[0m\n"
 sleep 1
