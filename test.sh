@@ -248,9 +248,9 @@ fi
       "mtu": 1280,
       "address": [
         "172.16.0.2/32",
-        "2606:4700:110:83cd:95db:c59e:ed45:3d2b/128"
+        "2606:4700:110:83f6:c6e2:6f85:742c:1ceb/128"
       ],
-      "private_key": "2XNnw3+yyEzggAuDj19wdMwVY8etBVKUGNlirqQ39FU=",
+      "private_key": "bDsEU/RV6DjWibo6/oiAxLM87JUqCH17WYZI1ItclUQ=",
       "peers": [
         {
           "address": "engage.cloudflareclient.com",
