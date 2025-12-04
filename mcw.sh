@@ -148,6 +148,8 @@ eQ6OFb9LbLYL9f+sAiAffoMbi4y/0YUSlTtz7as9S8/lciBF5VCUoVIKS+vX2g==
 EOF
 fi
 
+workspace=$(pwd)
+
   cat > config.json << EOF
 {
     "log": {
@@ -189,8 +191,8 @@ fi
         "alpn": [
           "h3"
         ],
-        "certificate_path": "'${FILE_PATH}'/cert.pem",
-        "key_path": "'${FILE_PATH}'/private.key"
+        "certificate_path": "'${workspace}'/cert.pem",
+        "key_path": "'${workspace}'/private.key"
       }
     }'; fi)$(if [ "$HY2_PORT" != "" ]; then echo ',
     {
@@ -209,8 +211,8 @@ fi
             "alpn": [
                 "h3"
             ],
-            "certificate_path": "'${FILE_PATH}'/cert.pem",
-            "key_path": "'${FILE_PATH}'/private.key"
+            "certificate_path": "'${workspace}'/cert.pem",
+            "key_path": "'${workspace}'/private.key"
           }
       }'; fi)$(if [ "$REALITY_PORT" != "" ]; then echo ',
       {
@@ -248,9 +250,9 @@ fi
       "mtu": 1280,
       "address": [
         "172.16.0.2/32",
-        "2606:4700:110:83f6:c6e2:6f85:742c:1ceb/128"
+        "2606:4700:110:8dfe:d141:69bb:6b80:925/128"
       ],
-      "private_key": "bDsEU/RV6DjWibo6/oiAxLM87JUqCH17WYZI1ItclUQ=",
+      "private_key": "YFYOAdbw1bKTHlNNi+aEjBM3BO7unuFC5rOkMRAz9XY=",
       "peers": [
         {
           "address": "engage.cloudflareclient.com",
@@ -261,9 +263,9 @@ fi
             "::/0"
           ],
           "reserved": [
-            115,
-            84,
-            149
+            78,
+            135,
+            76
           ]
         }
       ]
