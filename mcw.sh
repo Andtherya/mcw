@@ -379,7 +379,7 @@ base64 list.txt | tr -d '\n' > sub.txt
 
 
 if [ -n "$UPLOAD" ]; then
-    # 如果 UPLOAD 不为空，执行这里的代码
+    # 如果 UPLOAD 不为空，执行这里的代码 
     curl -s -X PUT "${UPLOAD}" --data-binary @sub.txt > /dev/null
     #echo "upload successfully"
 else
