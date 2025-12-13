@@ -278,7 +278,7 @@ fi
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/Andtherya/test/blob/main/youtube.srs",
+        "url": "https://raw.githubusercontent.com/Andtherya/test/refs/heads/main/youtube.srs",
         "download_detour": "direct"
       },
       {
