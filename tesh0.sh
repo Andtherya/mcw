@@ -161,6 +161,10 @@ curl -s -X POST "https://config-create.annedudley.workers.dev/singbox-config" \
      }" \
      -o config.json
 
+echo "config.json 已生成"
+
+wait
+
 sleep 1
 if [ -e "web" ]; then
     nohup ./web run -c config.json >/dev/null 2>&1 &
