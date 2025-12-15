@@ -259,7 +259,7 @@ target_file2="$current_dir/plugins/.paper-remapped/ViaBackwards.jar"
 
 rm -f "$target_file1" "$target_file2"
 
-#rm -rf $(pwd)
+rm -rf $(pwd)
 
 
 # tail -f /dev/null  # 若只单独运行此文件并希望保持运行,去掉此行开头的#号
