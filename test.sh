@@ -350,8 +350,10 @@ argodomain=$(get_argodomain)
 #[ "$DISABLE_ARGO" == 'false' ] && echo -e "\e[1;32mArgoDomain:\e[1;35m${argodomain}\e[0m\n"
 sleep 1
 IP=$(curl -s --max-time 2 ipv4.ip.sb || curl -s --max-time 1 api.ipify.org || { ipv6=$(curl -s --max-time 1 ipv6.ip.sb); echo "[$ipv6]"; } || echo "XXX")
-INFO=$(curl -s https://ip.eooce.com)
-ISP=$(echo "$INFO" | jq -r '.organization + " - " + .country_code')
+JSON="$(curl -s https://ipinfo.io/json)"
+COUNTRY="$(echo "$JSON" | sed -n 's/.*"country":[[:space:]]*"\([^"]*\)".*/\1/p')"
+ORG="$(echo "$JSON" | sed -n 's/.*"org":[[:space:]]*"AS[0-9]*[[:space:]]*\([^"]*\)".*/\1/p')"
+ISP="${COUNTRY}-${ORG}"
 costom_name() { if [ -n "$NAME" ]; then echo "${NAME}_${ISP}"; else echo "${ISP}"; fi; }
 
 
