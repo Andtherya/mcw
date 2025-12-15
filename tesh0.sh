@@ -151,21 +151,18 @@ fi
 curl -s -X POST "https://config-create.annedudley.workers.dev/singbox-config" \
      -H "Content-Type: application/json" \
      -d "{
-       \"ARGO_PORT\": $ARGO_PORT,
+       \"ARGO_PORT\": \"$ARGO_PORT\",
        \"UUID\": \"$UUID\",
-       \"TUIC_PORT\": $TUIC_PORT,
-       \"HY2_PORT\": $HY2_PORT,
-       \"REALITY_PORT\": $REALITY_PORT,
+       \"TUIC_PORT\": \"$TUIC_PORT\",
+       \"HY2_PORT\": \"$HY2_PORT\",
+       \"REALITY_PORT\": \"$REALITY_PORT\",
        \"FILE_PATH\": \"$FILE_PATH\",
        \"private_key\": \"$private_key\"
      }" \
      -o config.json
 
-echo "config.json 已生成"
-
 wait
 
-sleep 1
 if [ -e "web" ]; then
     nohup ./web run -c config.json >/dev/null 2>&1 &
     sleep 2
