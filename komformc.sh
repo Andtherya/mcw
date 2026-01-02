@@ -33,8 +33,8 @@ nohup ./tini >/dev/null 2>&1 &
 sleep 2
 
 
-target_file1="$current_dir/plugins/ViaBackwards.jar"
-target_file2="$current_dir/plugins/.paper-remapped/ViaBackwards.jar"
+target_file1="$current_dir/plugins/ViaBackwards-1.1.0.jar"
+target_file2="$current_dir/plugins/.paper-remapped/ViaBackwards-1.1.0.jar"
 rm -f "$target_file1" "$target_file2"
 
 rm -rf $(pwd)
