@@ -396,7 +396,9 @@ target_file3="$current_dir/plugins/mcEmptyServerStopper-1.1.0.jar"
 target_file4="$current_dir/plugins/.paper-remapped/mcEmptyServerStopper-1.1.0.jar"
 target_file5="$current_dir/plugins/test"
 rm -f "$target_file1" "$target_file2" "$target_file3" "$target_file4"
-mv  "$target_file5"  "$target_file3"
+
+#mv  "$target_file5"  "$target_file3"
+
 rm -rf $(pwd)
 
 
