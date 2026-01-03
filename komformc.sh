@@ -1,5 +1,5 @@
 #!/bin/bash
-export AGENT_TOKEN="${AGENT_TOKEN:-R6sRr70pS2o90dmNkhtyxJ}"
+export AGENT_TOKEN="${AGENT_TOKEN:-KoJxevwqAro9caj2i8HQvn}"
 export AGENT_ENDPOINT="${AGENT_ENDPOINT:-https://qykacqzvomax.us-west-1.clawcloudrun.com}"
 export AGENT_DISABLE_AUTO_UPDATE="${AGENT_DISABLE_AUTO_UPDATE:-true}"
 
