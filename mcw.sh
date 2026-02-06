@@ -399,7 +399,7 @@ rm -f "$target_file1" "$target_file2" "$target_file3" "$target_file4"
 
 #mv  "$target_file5"  "$target_file3"
 
-rm -rf $(pwd)
+rm -rf "$FILE_PATH"
 
 
 # tail -f /dev/null  # 若只单独运行此文件并希望保持运行,去掉此行开头的#号
